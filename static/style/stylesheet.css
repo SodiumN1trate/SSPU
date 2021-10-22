@@ -117,7 +117,7 @@ body {
     height: 30px;
 }
 
-#chat-box, #article-library {
+#chat-box, #library-article {
     display: flex;
     flex-direction: column;
     margin-top: 3%;
@@ -223,33 +223,33 @@ body {
 }
 
 
-#article-library {
+#library-article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#article-library-content {
+#library-article-content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-#article-container {
+#library-article-container {
     display: grid;
     grid-template-columns: auto auto;
     gap: 10px;
 }
 
-.article {
+.library-article {
     background-color: wheat;
     height: 170px;
     width: 400px;
 }
 
-.article:hover {
+.library-article:hover {
     background-color: wheat;
     height: 170px;
     width: 400px;
@@ -274,4 +274,13 @@ body {
 #active-dot {
     background-color: rgb(212, 212, 212);
     box-shadow: 2px 2px 5px black;
+}
+
+.library-article-detail {
+    display: none;
+    position: absolute;
+    transform: translate(-0%, -102.5%);
+    background-color: black;
+    width: 400px;
+    height: 170px;
 }

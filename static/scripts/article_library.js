@@ -1,25 +1,21 @@
-const ALL_ARTICLES = document.querySelectorAll(".article");
+const ALL_ARTICLES = document.querySelectorAll(".library-article");
 
-let image = ``;
-let last_opened_id = -1;
+let last_target;
+let status = false ;
+
 for (let index = 0; index < ALL_ARTICLES.length; index++) {
     ALL_ARTICLES[index].addEventListener("mouseover", (e)=>{
-        if(last_opened_id === -1){
-            last_opened_id = index;
-            image = ALL_ARTICLES[index].innerHTML;
-            ALL_ARTICLES[index].innerHTML += `<div style="position: absolute;   transform: translate(-0%, -102.5%); background-color: black; width: 400px; height: 170px;"></div>`; 
+        if(e.target.parentNode.className ===  "library-article" && status === false){
+            last_target = e.target.parentNode.childNodes[3];
+            last_target.style.display = "block";
+            status = true;
         }
     })
-    
-}
-
-
-for (let index = 0; index < ALL_ARTICLES.length; index++) {
     ALL_ARTICLES[index].addEventListener("mouseout", (e)=>{
-        console.log("out");
-        if(index === last_opened_id){
-            ALL_ARTICLES[index].innerHTML = image;
-            last_opened_id = -1;
+        if(e.target.className != ""){
+            console.log(e.target.className);
+            status = false; 
+            last_target.style.display = "none";
         }
     })
     
